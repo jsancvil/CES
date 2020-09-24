@@ -1,6 +1,6 @@
-﻿namespace CES
+﻿namespace CES.Pages.Control
 {
-    partial class Form1
+    partial class Salidas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.SuspendLayout();
             // 
-            // Form1
+            // Salidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 485);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ClientSize = new System.Drawing.Size(795, 370);
+            this.Name = "Salidas";
+            this.Text = "Salidas";
+            this.Load += new System.EventHandler(this.Salidas_Load);
             this.ResumeLayout(false);
 
         }
@@ -47,4 +45,3 @@
         #endregion
     }
 }
-

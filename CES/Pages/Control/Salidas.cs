@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CES
+namespace CES.Pages.Control
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    public partial class Salidas : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public Salidas()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Salidas_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
