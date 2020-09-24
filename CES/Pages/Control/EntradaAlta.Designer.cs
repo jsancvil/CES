@@ -38,6 +38,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblIdProducto = new System.Windows.Forms.Label();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.txtPrecioUnit = new MetroFramework.Controls.MetroTextBox();
             this.lblGrupo = new MetroFramework.Controls.MetroLabel();
@@ -53,6 +54,13 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.chkAutomatico = new MetroFramework.Controls.MetroCheckBox();
             this.gvData = new MetroFramework.Controls.MetroGrid();
+            this.idPartida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pUnitarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.entradasPartidasspBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.control = new CES.DB.DataSets.Control();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
@@ -74,14 +82,7 @@
             this.entradas_spTableAdapter = new CES.DB.DataSets.ControlTableAdapters.Entradas_spTableAdapter();
             this.entradasPartidas_spTableAdapter = new CES.DB.DataSets.ControlTableAdapters.EntradasPartidas_spTableAdapter();
             this.salidasPartidas_spTableAdapter = new CES.DB.DataSets.ControlTableAdapters.SalidasPartidas_spTableAdapter();
-            this.lblIdProducto = new System.Windows.Forms.Label();
-            this.idPartida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pUnitarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExportar = new MetroFramework.Controls.MetroButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entradasPartidasspBindingSource)).BeginInit();
@@ -126,6 +127,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1124, 469);
             this.panel1.TabIndex = 0;
+            // 
+            // lblIdProducto
+            // 
+            this.lblIdProducto.AutoSize = true;
+            this.lblIdProducto.Location = new System.Drawing.Point(683, 340);
+            this.lblIdProducto.Name = "lblIdProducto";
+            this.lblIdProducto.Size = new System.Drawing.Size(0, 13);
+            this.lblIdProducto.TabIndex = 41;
             // 
             // metroLabel10
             // 
@@ -386,6 +395,87 @@
             this.gvData.Size = new System.Drawing.Size(589, 419);
             this.gvData.TabIndex = 27;
             this.gvData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvData_CellClick);
+            // 
+            // idPartida
+            // 
+            this.idPartida.DataPropertyName = "idPartida";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.NullValue = null;
+            this.idPartida.DefaultCellStyle = dataGridViewCellStyle2;
+            this.idPartida.FillWeight = 20F;
+            this.idPartida.HeaderText = "#";
+            this.idPartida.Name = "idPartida";
+            this.idPartida.ReadOnly = true;
+            this.idPartida.Width = 20;
+            // 
+            // codeDataGridViewTextBoxColumn
+            // 
+            this.codeDataGridViewTextBoxColumn.DataPropertyName = "code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "code";
+            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+            this.codeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productoDataGridViewTextBoxColumn
+            // 
+            this.productoDataGridViewTextBoxColumn.DataPropertyName = "producto";
+            this.productoDataGridViewTextBoxColumn.HeaderText = "producto";
+            this.productoDataGridViewTextBoxColumn.Name = "productoDataGridViewTextBoxColumn";
+            this.productoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.cantidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.cantidadDataGridViewTextBoxColumn.FillWeight = 75F;
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cantidadDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // pUnitarioDataGridViewTextBoxColumn
+            // 
+            this.pUnitarioDataGridViewTextBoxColumn.DataPropertyName = "pUnitario";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.pUnitarioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.pUnitarioDataGridViewTextBoxColumn.FillWeight = 75F;
+            this.pUnitarioDataGridViewTextBoxColumn.HeaderText = "Precio Unit.";
+            this.pUnitarioDataGridViewTextBoxColumn.Name = "pUnitarioDataGridViewTextBoxColumn";
+            this.pUnitarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pUnitarioDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // pTotalDataGridViewTextBoxColumn
+            // 
+            this.pTotalDataGridViewTextBoxColumn.DataPropertyName = "pTotal";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.pTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.pTotalDataGridViewTextBoxColumn.FillWeight = 125F;
+            this.pTotalDataGridViewTextBoxColumn.HeaderText = "Sub Total";
+            this.pTotalDataGridViewTextBoxColumn.Name = "pTotalDataGridViewTextBoxColumn";
+            this.pTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pTotalDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Delete
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.NullValue = "X";
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Delete.FillWeight = 50F;
+            this.Delete.HeaderText = "Eliminar";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 50;
             // 
             // entradasPartidasspBindingSource
             // 
@@ -666,100 +756,23 @@
             // 
             this.salidasPartidas_spTableAdapter.ClearBeforeFill = true;
             // 
-            // lblIdProducto
+            // btnExportar
             // 
-            this.lblIdProducto.AutoSize = true;
-            this.lblIdProducto.Location = new System.Drawing.Point(683, 340);
-            this.lblIdProducto.Name = "lblIdProducto";
-            this.lblIdProducto.Size = new System.Drawing.Size(0, 13);
-            this.lblIdProducto.TabIndex = 41;
-            // 
-            // idPartida
-            // 
-            this.idPartida.DataPropertyName = "idPartida";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.NullValue = null;
-            this.idPartida.DefaultCellStyle = dataGridViewCellStyle2;
-            this.idPartida.FillWeight = 20F;
-            this.idPartida.HeaderText = "#";
-            this.idPartida.Name = "idPartida";
-            this.idPartida.ReadOnly = true;
-            this.idPartida.Width = 20;
-            // 
-            // codeDataGridViewTextBoxColumn
-            // 
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "code";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
-            this.codeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productoDataGridViewTextBoxColumn
-            // 
-            this.productoDataGridViewTextBoxColumn.DataPropertyName = "producto";
-            this.productoDataGridViewTextBoxColumn.HeaderText = "producto";
-            this.productoDataGridViewTextBoxColumn.Name = "productoDataGridViewTextBoxColumn";
-            this.productoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.cantidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.cantidadDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cantidadDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // pUnitarioDataGridViewTextBoxColumn
-            // 
-            this.pUnitarioDataGridViewTextBoxColumn.DataPropertyName = "pUnitario";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.pUnitarioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.pUnitarioDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.pUnitarioDataGridViewTextBoxColumn.HeaderText = "Precio Unit.";
-            this.pUnitarioDataGridViewTextBoxColumn.Name = "pUnitarioDataGridViewTextBoxColumn";
-            this.pUnitarioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pUnitarioDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // pTotalDataGridViewTextBoxColumn
-            // 
-            this.pTotalDataGridViewTextBoxColumn.DataPropertyName = "pTotal";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.pTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.pTotalDataGridViewTextBoxColumn.FillWeight = 125F;
-            this.pTotalDataGridViewTextBoxColumn.HeaderText = "Sub Total";
-            this.pTotalDataGridViewTextBoxColumn.Name = "pTotalDataGridViewTextBoxColumn";
-            this.pTotalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pTotalDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // Delete
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.NullValue = "X";
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Delete.FillWeight = 50F;
-            this.Delete.HeaderText = "Eliminar";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 50;
+            this.btnExportar.Location = new System.Drawing.Point(501, 31);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(103, 23);
+            this.btnExportar.Style = MetroFramework.MetroColorStyle.Green;
+            this.btnExportar.TabIndex = 4;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.UseSelectable = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // EntradaAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1164, 549);
+            this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "EntradaAlta";
@@ -824,5 +837,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pUnitarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pTotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delete;
+        private MetroFramework.Controls.MetroButton btnExportar;
     }
 }

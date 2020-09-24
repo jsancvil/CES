@@ -1,12 +1,15 @@
 ﻿using CES.DB.Metodos.Catalogos;
 using CES.DB.Metodos.config;
 using CES.DB.Metodos.Control;
+using ClosedXML.Excel;
 using MetroFramework.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -77,14 +80,14 @@ namespace CES.Pages.Control
         {
             try
             {
-                var dt = new dtoEntradas
+                var dtEntradas = new dtoEntradas
                 {
                     operacion = "SelectByID",
                     activo = true,
                     idEntrada = _idEntrada
                 }.CRUD().dtResult;
 
-                foreach (DataRow row in dt.Rows)
+                foreach (DataRow row in dtEntradas.Rows)
                 {
                     txtIdEntrada.Text = row["idEntrada"].ToString();
                     txtNombreEntrada.Text = row["nombreEntrega"].ToString();
@@ -111,6 +114,7 @@ namespace CES.Pages.Control
                     idEntrada = _idEntrada
                 }.CRUD().dtResult;
 
+                dt = dtPartidas;
                 gvData.DataSource = dtPartidas;
             }
             catch (Exception ex)
@@ -600,6 +604,37 @@ namespace CES.Pages.Control
                         drow.Delete();
                     }
 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string nombre = DateTime.Now.ToString("yyyyMMddHHmmss");
+                nombre = string.Format("EntradasPartidas_{0}.xlsx", nombre);
+
+                //Exporting to Excel
+                string folderPath = "C:\\CES\\Excel\\";
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+                using (XLWorkbook wb = new XLWorkbook())
+                {
+                    wb.Worksheets.Add(dt, "Customers");
+                    wb.SaveAs(folderPath + nombre);
+                }
+
+                if (MessageBox.Show("Archivo generado correctamente ¿Abrir ubicación del archivo?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Process.Start(@folderPath);
                 }
             }
             catch (Exception ex)

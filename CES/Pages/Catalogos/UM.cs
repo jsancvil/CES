@@ -64,6 +64,9 @@ namespace CES.Pages.Catalogos
         {
             try
             {
+                 if (e.RowIndex == -1 || e.ColumnIndex == -1)
+                    return;
+
                 string idUM = gvData.Rows[e.RowIndex].Cells["idUM"].FormattedValue.ToString();
 
                 if (gvData.Columns[e.ColumnIndex].Name == "Delete")

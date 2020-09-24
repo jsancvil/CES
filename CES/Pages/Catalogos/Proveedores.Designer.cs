@@ -35,7 +35,6 @@ namespace CES.Pages.Catalogos
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.database1DataSet = new CES.Database1DataSet();
             this.ProveedoresspBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Proveedores_spTableAdapter = new CES.DB.DataSets.CatalogosTableAdapters.Proveedores_spTableAdapter();
             this.gvData = new MetroFramework.Controls.MetroGrid();
@@ -62,7 +61,6 @@ namespace CES.Pages.Catalogos
             this.config = new CES.DB.DataSets.Config();
             this.usuariosspBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarios_spTableAdapter = new CES.DB.DataSets.ConfigTableAdapters.Usuarios_spTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresspBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresspBindingSource1)).BeginInit();
@@ -71,11 +69,6 @@ namespace CES.Pages.Catalogos
             ((System.ComponentModel.ISupportInitialize)(this.config)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosspBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Proveedores_spTableAdapter
             // 
@@ -365,7 +358,6 @@ namespace CES.Pages.Catalogos
             this.Controls.Add(this.gvData);
             this.Name = "Proveedores";
             this.Text = "Proveedores";
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresspBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresspBindingSource1)).EndInit();
@@ -380,7 +372,6 @@ namespace CES.Pages.Catalogos
 
         #endregion
         private System.Windows.Forms.BindingSource ProveedoresspBindingSource;
-        private Database1DataSet database1DataSet;
         private DB.DataSets.Config config;
         private System.Windows.Forms.BindingSource usuariosspBindingSource;
         private DB.DataSets.ConfigTableAdapters.Usuarios_spTableAdapter usuarios_spTableAdapter;

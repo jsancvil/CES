@@ -41,7 +41,6 @@
             this.uMspBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.catalogos = new CES.DB.DataSets.Catalogos();
             this.UMpBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database1DataSet = new CES.Database1DataSet();
             this.database1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grupo_spTableAdapter = new CES.DB.DataSets.CatalogosTableAdapters.Grupo_spTableAdapter();
             this.btnNuevo = new MetroFramework.Controls.MetroButton();
@@ -52,7 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.uMspBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.catalogos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UMpBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,16 +163,6 @@
             this.UMpBindingSource.DataMember = "Grupo_sp";
             this.UMpBindingSource.DataSource = this.catalogos;
             // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // database1DataSetBindingSource
-            // 
-            this.database1DataSetBindingSource.DataSource = this.database1DataSet;
-            this.database1DataSetBindingSource.Position = 0;
-            // 
             // grupo_spTableAdapter
             // 
             this.grupo_spTableAdapter.ClearBeforeFill = true;
@@ -231,7 +219,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.uMspBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.catalogos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UMpBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -242,7 +229,6 @@
         private MetroFramework.Controls.MetroGrid gvData;
         private System.Windows.Forms.BindingSource UMpBindingSource;
         private DB.DataSets.Catalogos catalogos;
-        private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource database1DataSetBindingSource;
         private DB.DataSets.CatalogosTableAdapters.Grupo_spTableAdapter grupo_spTableAdapter;
         private MetroFramework.Controls.MetroButton btnNuevo;

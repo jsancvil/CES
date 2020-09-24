@@ -123,6 +123,9 @@ namespace CES.Pages.Catalogos
         {
             try
             {
+                 if (e.RowIndex == -1 || e.ColumnIndex == -1)
+                    return;
+
                 string idProveedor = gvData.Rows[e.RowIndex].Cells["idProveedor"].FormattedValue.ToString();
 
                 if (gvData.Columns[e.ColumnIndex].Name == "Delete")

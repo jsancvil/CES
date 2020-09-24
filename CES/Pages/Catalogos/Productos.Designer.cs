@@ -1,4 +1,6 @@
-﻿namespace CES.Pages.Catalogos
+﻿using CES.DB.DataSets.CatalogosTableAdapters;
+
+namespace CES.Pages.Catalogos
 {
     partial class Productos
     {
@@ -37,9 +39,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.database1DataSet = new CES.Database1DataSet();
             this.productosspBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productos_spTableAdapter = new CES.Database1DataSetTableAdapters.Productos_spTableAdapter();
+            this.productos_spTableAdapter = new Productos_spTableAdapter();
             this.gvData = new MetroFramework.Controls.MetroGrid();
             this.btnNuevo = new MetroFramework.Controls.MetroButton();
             this.btnActualizar = new MetroFramework.Controls.MetroButton();
@@ -65,23 +66,12 @@
             this.maximoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosspBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvData)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.config)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosspBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productosspBindingSource
-            // 
-            this.productosspBindingSource.DataMember = "Productos_sp";
-            this.productosspBindingSource.DataSource = this.database1DataSet;
             // 
             // productos_spTableAdapter
             // 
@@ -395,7 +385,6 @@
             this.Controls.Add(this.gvData);
             this.Name = "Productos";
             this.Text = "Productos";
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosspBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvData)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -408,11 +397,10 @@
 
         #endregion
         private System.Windows.Forms.BindingSource productosspBindingSource;
-        private Database1DataSet database1DataSet;
         private DB.DataSets.Config config;
         private System.Windows.Forms.BindingSource usuariosspBindingSource;
         private DB.DataSets.ConfigTableAdapters.Usuarios_spTableAdapter usuarios_spTableAdapter;
-        private Database1DataSetTableAdapters.Productos_spTableAdapter productos_spTableAdapter;
+        private Productos_spTableAdapter productos_spTableAdapter;
         private MetroFramework.Controls.MetroGrid gvData;
         private MetroFramework.Controls.MetroButton btnNuevo;
         private MetroFramework.Controls.MetroButton btnActualizar;

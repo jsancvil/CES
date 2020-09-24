@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnEntrar = new MetroFramework.Controls.MetroButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -38,7 +39,6 @@
             this.txtPsw = new MetroFramework.Controls.MetroTextBox();
             this.txtUsuario = new MetroFramework.Controls.MetroTextBox();
             this.chkRecordar = new MetroFramework.Controls.MetroCheckBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -52,6 +52,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(288, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.MaximumSize = new System.Drawing.Size(288, 100);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(288, 100);
+            this.panel3.TabIndex = 1;
             // 
             // btnEntrar
             // 
@@ -201,17 +212,6 @@
             this.chkRecordar.TabIndex = 3;
             this.chkRecordar.Text = "Recordar";
             this.chkRecordar.UseSelectable = true;
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.MaximumSize = new System.Drawing.Size(288, 100);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(288, 100);
-            this.panel3.TabIndex = 1;
             // 
             // Login
             // 

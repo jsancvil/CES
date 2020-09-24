@@ -12,10 +12,11 @@ using System.Windows.Forms;
 using ClosedXML.Excel;
 using System.Diagnostics;
 using CES.DB.Metodos.config;
+using CES.Pages.Catalogos;
 
-namespace CES.Pages.Catalogos
+namespace CES.Pages.Control
 {
-    public partial class Productos : MetroFramework.Forms.MetroForm
+    public partial class Inventario : MetroFramework.Forms.MetroForm
     {
         readonly function ofunciones = new function();
         readonly ObjetosFunciones objFunciones = new ObjetosFunciones();
@@ -26,7 +27,7 @@ namespace CES.Pages.Catalogos
         private int CurrentPageIndex = 1;
         private int TotalPage = 0;
 
-        public Productos()
+        public Inventario()
         {
             InitializeComponent();
             ddlPaginas.SelectedValue = "20";
@@ -123,10 +124,10 @@ namespace CES.Pages.Catalogos
         {
             try
             {
-                 if (e.RowIndex == -1 || e.ColumnIndex == -1)
+                if (e.RowIndex == -1 || e.ColumnIndex == -1)
                     return;
 
-                string idProducto = gvData.Rows[e.RowIndex].Cells["idProducto"].FormattedValue.ToString();
+                string idProducto = gvData.Rows[e.RowIndex].Cells["_idProducto"].FormattedValue.ToString();
 
                 if (gvData.Columns[e.ColumnIndex].Name == "Delete")
                 {
@@ -167,32 +168,45 @@ namespace CES.Pages.Catalogos
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            try
+            string nombre = DateTime.Now.ToString("yyyyMMddHHmmss");
+            nombre = string.Format("Productos_{0}.xlsx", nombre);
+
+            //Creating DataTable
+            //DataTable dt = new DataTable();
+
+            ////Adding the Columns
+            //foreach (DataGridViewColumn column in gvData.Columns)
+            //{
+            //    if(column.Name != "Delete")
+            //        dt.Columns.Add(column.HeaderText, column.ValueType);
+            //}
+
+            ////Adding the Rows
+            //foreach (DataGridViewRow row in gvData.Rows)
+            //{
+            //    dt.Rows.Add();
+            //    foreach (DataGridViewCell cell in row.Cells)
+            //    {
+            //        dt.Rows[dt.Rows.Count - 1][cell.ColumnIndex] = cell.Value.ToString();
+            //    }
+            //}
+
+            //Exporting to Excel
+            string folderPath = "C:\\CES\\Excel\\";
+            if (!Directory.Exists(folderPath))
             {
-                string nombre = DateTime.Now.ToString("yyyyMMddHHmmss");
-                nombre = string.Format("Productos_{0}.xlsx", nombre);
-
-                //Exporting to Excel
-                string folderPath = "C:\\CES\\Excel\\";
-                if (!Directory.Exists(folderPath))
-                {
-                    Directory.CreateDirectory(folderPath);
-                }
-                using (XLWorkbook wb = new XLWorkbook())
-                {
-
-                    wb.Worksheets.Add(dt, "Customers");
-                    wb.SaveAs(folderPath + nombre);
-                }
-
-                if (MessageBox.Show("Archivo generado correctamente ¿Abrir ubicación del archivo?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    Process.Start(@folderPath);
-                }
+                Directory.CreateDirectory(folderPath);
             }
-            catch (Exception ex)
+            using (XLWorkbook wb = new XLWorkbook())
             {
-                MessageBox.Show(ex.Message);
+
+                wb.Worksheets.Add(dt, "Customers");
+                wb.SaveAs(folderPath + nombre);
+            }
+
+            if (MessageBox.Show("Archivo generado correctamente ¿Abrir ubicación del archivo?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Process.Start(@folderPath);
             }
         }
 
@@ -256,7 +270,7 @@ namespace CES.Pages.Catalogos
         {
             try
             {
-                string idProducto = gvData.Rows[e.RowIndex].Cells["idProducto"].FormattedValue.ToString();
+                string idProducto = gvData.Rows[e.RowIndex].Cells["_idProducto"].FormattedValue.ToString();
 
                 ProductoAlta frm = new ProductoAlta();
                 var _frm = Application.OpenForms["ProductoAlta"] as ProductoAlta;

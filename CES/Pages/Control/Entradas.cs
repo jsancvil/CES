@@ -124,6 +124,9 @@ namespace CES.Pages.Control
         {
             try
             {
+                 if (e.RowIndex == -1 || e.ColumnIndex == -1)
+                    return;
+
                 string idEntrada = gvData.Rows[e.RowIndex].Cells["idEntrada"].FormattedValue.ToString();
 
                 if (gvData.Columns[e.ColumnIndex].Name == "Delete")

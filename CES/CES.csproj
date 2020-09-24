@@ -97,11 +97,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database1DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Database1DataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DB\DataSets\Catalogos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,12 +116,6 @@
     <Compile Include="DB\Metodos\Config.cs" />
     <Compile Include="DB\Metodos\Control.cs" />
     <Compile Include="DB\resultTransaction.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="function.cs" />
     <Compile Include="global.cs" />
     <Compile Include="Pages\Catalogos\ProveedorAlta.cs">
@@ -201,17 +190,23 @@
     <Compile Include="Pages\Control\Bitacora.Designer.cs">
       <DependentUpon>Bitacora.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Control\Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Control\Inventario.Designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Control\SalidaAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Control\SalidaAlta.Designer.cs">
+      <DependentUpon>SalidaAlta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Control\EntradaAlta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pages\Control\EntradaAlta.Designer.cs">
       <DependentUpon>EntradaAlta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Control\Entradas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pages\Control\Entradas.Designer.cs">
-      <DependentUpon>Entradas.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Control\Salidas.cs">
       <SubType>Form</SubType>
@@ -219,11 +214,11 @@
     <Compile Include="Pages\Control\Salidas.Designer.cs">
       <DependentUpon>Salidas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Control\SalidaAlta.cs">
+    <Compile Include="Pages\Control\Entradas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\Control\SalidaAlta.Designer.cs">
-      <DependentUpon>SalidaAlta.cs</DependentUpon>
+    <Compile Include="Pages\Control\Entradas.Designer.cs">
+      <DependentUpon>Entradas.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Login.cs">
       <SubType>Form</SubType>
@@ -239,9 +234,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Catalogos\ProveedorAlta.resx">
       <DependentUpon>ProveedorAlta.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,17 +270,20 @@
     <EmbeddedResource Include="Pages\Control\Bitacora.resx">
       <DependentUpon>Bitacora.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Control\Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Control\SalidaAlta.resx">
+      <DependentUpon>SalidaAlta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Control\EntradaAlta.resx">
       <DependentUpon>EntradaAlta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Control\Entradas.resx">
-      <DependentUpon>Entradas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Control\Salidas.resx">
       <DependentUpon>Salidas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Control\SalidaAlta.resx">
-      <DependentUpon>SalidaAlta.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\Control\Entradas.resx">
+      <DependentUpon>Entradas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -301,17 +296,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Database1DataSet.xsc">
-      <DependentUpon>Database1DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Database1DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Database1DataSet.xss">
-      <DependentUpon>Database1DataSet.xsd</DependentUpon>
-    </None>
     <None Include="DB\DataSets\Catalogos.xsc">
       <DependentUpon>Catalogos.xsd</DependentUpon>
     </None>

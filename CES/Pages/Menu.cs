@@ -24,34 +24,9 @@ namespace CES.Pages
 
         private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                switch (LoginInfo.idRol)
-                {
-                    case 1:
-                        {
-                            configLicencia.Visible = true;
-                        }
-                        break;
-                    case 2:
-                        {
-                            configLicencia.Visible = false;
-                        }
-                        break;
-                    case 3:
-                        {
-                            menucConfig.Enabled = false;
-                            configLicencia.Visible = false;
-                        }
-                        break;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            Control.Inventario frm = new Control.Inventario();
+            var _frm = Application.OpenForms["Inventario"] as Control.Inventario;
+            ofunciones.cargarForm(frm, _frm, this);
         }
 
 
@@ -60,7 +35,6 @@ namespace CES.Pages
             Control.Bitacora frm = new Control.Bitacora();
             var _frm = Application.OpenForms["Bitacora"] as Control.Bitacora;
             ofunciones.cargarForm(frm, _frm, this);
-
         }
 
         private void listaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -166,6 +140,54 @@ namespace CES.Pages
             Licencia frm = new Licencia();
             var _frm = Application.OpenForms["Licencia"] as Licencia;
             ofunciones.cargarForm(frm, _frm, this);
+        }
+
+        private void menuControlSalidaN_Click(object sender, EventArgs e)
+        {
+            SalidaAlta frm = new SalidaAlta();
+            var _frm = Application.OpenForms["SalidaAlta"] as SalidaAlta;
+            ofunciones.cargarForm(frm, _frm, this);
+
+        }
+
+        private void menuControlSalidaL_Click(object sender, EventArgs e)
+        {
+            Salidas frm = new Salidas();
+            var _frm = Application.OpenForms["Salidas"] as Salidas;
+            ofunciones.cargarForm(frm, _frm, this);
+
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            try
+            {
+
+                switch (LoginInfo.idRol)
+                {
+                    case 1:
+                        {
+                            configLicencia.Visible = true;
+                        }
+                        break;
+                    case 2:
+                        {
+                            configLicencia.Visible = false;
+                        }
+                        break;
+                    case 3:
+                        {
+                            menucConfig.Enabled = false;
+                            configLicencia.Visible = false;
+                        }
+                        break;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

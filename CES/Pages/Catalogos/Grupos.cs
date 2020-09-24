@@ -64,6 +64,9 @@ namespace CES.Pages.Catalogos
         {
             try
             {
+                 if (e.RowIndex == -1 || e.ColumnIndex == -1)
+                    return;
+
                 string idGrupo = gvData.Rows[e.RowIndex].Cells["idGrupo"].FormattedValue.ToString();
 
                 if (gvData.Columns[e.ColumnIndex].Name == "Delete")

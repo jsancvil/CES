@@ -191,4 +191,46 @@ namespace CES.DB.Metodos.Control
         }
     }
     #endregion
+
+
+    #region Entradas
+    public class dtoBitacora
+    {
+        private int _id = 0;
+
+        public string @operacion { get; set; }
+        public int @id { get { return _id; } set { _id = value; } }
+        public DateTime? @fechaAlta { get; set; }
+        public string @detalles { get; set; }
+        public string @folio { get; set; }
+        public int @indexInicio { get; set; }
+        public int @indexFin { get; set; }
+
+        readonly Bitacora_spTableAdapter oBitacora = new Bitacora_spTableAdapter();
+
+        public resultTransaction CRUD()
+        {
+            var result = new resultTransaction();
+            var dt = new DataTable();
+            try
+            {
+                dt = oBitacora.GetData(@operacion, ref result.idOut, ref result.hasError, ref result.noError, ref result.messageError,
+                         @id, @fechaAlta, @detalles, @folio, @indexInicio, @indexFin);
+
+                result.dtResult = dt;
+                return result;
+            }
+            catch (SqlException ex)
+            {
+                result.hasError = true;
+                result.dtResult = dt;
+                result.noError = ex.ErrorCode;
+                result.messageError = string.Format("Error: {0} , {1}, {2} , {3}", ex.Message, ex.Procedure, ex.Source, ex.LineNumber);
+                result.idOut = "";
+
+                return result;
+            }
+        }
+    }
+    #endregion
 }

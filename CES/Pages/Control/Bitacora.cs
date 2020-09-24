@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using ClosedXML.Excel;
 using System.Diagnostics;
 using CES.DB.Metodos.config;
+using CES.DB.Metodos.Control;
 
 namespace CES.Pages.Control
 {
@@ -51,7 +52,7 @@ namespace CES.Pages.Control
                 ddlPaginas.SelectedValue = "20";
                 PgSize = int.Parse(ddlPaginas.SelectedValue.ToString());
 
-                string query = "SELECT COUNT(*) FROM Catalogo.Productos WHERE activo = 1";
+                string query = "SELECT COUNT(*) FROM Control.Bitacora_vw";
                 var dtReg = objFunciones.selectByQuery(query);
                 int rowCount = dtReg != null ? int.Parse(dtReg.Rows[0][0].ToString()) : 0;
 
@@ -61,7 +62,7 @@ namespace CES.Pages.Control
                     TotalPage += 1;
 
 
-                lblTotal.Text = "Total de productos: " + rowCount;
+                lblTotal.Text = "Total de Bitacora: " + rowCount;
 
                 GetCurrentRecords(CurrentPageIndex);
             }
@@ -73,32 +74,26 @@ namespace CES.Pages.Control
 
         private void GetCurrentRecords(int page)
         {
-            DataTable dt = new DataTable();
-
             int indexFin = PgSize;
             int indexInicio = (page * PgSize) - PgSize;
 
 
-            dt = new dtoProductos
+            dt = new dtoBitacora
             {
                 operacion = "SelectAll",
-                activo = true,
                 indexInicio = indexInicio,
                 indexFin = indexFin
             }.CRUD().dtResult;
 
             gvData.DataSource = dt;
-
+            
 
         }
-
+ 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
 
-            //ProductoAlta frm = new ProductoAlta();
-            //var menu = Application.OpenForms["menu"] as Menu;
-            //var _frm = Application.OpenForms["ProductoAlta"] as Catalogos.ProductoAlta;
-            //ofunciones.cargarForm(frm, _frm, menu);
+            
         }
 
         protected void inicializaForm(Form frm)
@@ -123,41 +118,19 @@ namespace CES.Pages.Control
         {
             try
             {
-                string idProducto = gvData.Rows[e.RowIndex].Cells["idProducto"].FormattedValue.ToString();
+                 if (e.RowIndex == -1 || e.ColumnIndex == -1)
+                    return;
+
+                string idEntrada = gvData.Rows[e.RowIndex].Cells["id"].FormattedValue.ToString();
 
                 if (gvData.Columns[e.ColumnIndex].Name == "Delete")
                 {
-                    if (MessageBox.Show("¿Está seguro de que desea eliminar el producto?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("¿Está seguro de que desea eliminar el Entrada?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-
-                        var result = new dtoProductos
-                        {
-                            operacion = "Delete",
-                            idProducto = int.Parse(idProducto),
-                            activo = false,
-                            idUsuario = LoginInfo.idUsuario
-                        }.CRUD();
-
-                        if (!bool.Parse(result.hasError.ToString()))
-                        {
-                            string msn = "Registro Eliminado Correctamenete";
-
-                            MessageBox.Show(msn);
-
-                            OnLoad();
-
-                        }
-                        else
-                            MessageBox.Show(result.messageError);
                     }
                 }
                 else
                 {
-                    //ProductoAlta frm = new ProductoAlta();
-                    //var _frm = Application.OpenForms["ProductoAlta"] as ProductoAlta;
-                    //var menu = Application.OpenForms["menu"] as Menu;
-                    //frm._idProducto = int.Parse(idProducto);
-                    //ofunciones.cargarForm(frm, null, menu);
 
                 }
             }
@@ -170,7 +143,7 @@ namespace CES.Pages.Control
         private void btnExportar_Click(object sender, EventArgs e)
         {
             string nombre = DateTime.Now.ToString("yyyyMMddHHmmss");
-            nombre = string.Format("Productos_{0}.xlsx", nombre);
+            nombre = string.Format("Bitacora_{0}.xlsx", nombre);
 
             //Creating DataTable
             //DataTable dt = new DataTable();
@@ -247,7 +220,7 @@ namespace CES.Pages.Control
             {
                 PgSize = int.Parse(ddlPaginas.SelectedValue.ToString());
 
-                string query = "SELECT COUNT(*) FROM Catalogo.Productos WHERE activo = 1";
+                string query = "SELECT COUNT(*) FROM Control.Bitacora_vw";
                 var dtReg = objFunciones.selectByQuery(query);
                 int rowCount = dtReg != null ? int.Parse(dtReg.Rows[0][0].ToString()) : 0;
 
@@ -257,9 +230,39 @@ namespace CES.Pages.Control
                     TotalPage += 1;
 
 
-                lblTotal.Text = "Total de productos: " + rowCount;
+                lblTotal.Text = "Total de Bitacora: " + rowCount;
 
                 GetCurrentRecords(CurrentPageIndex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void gvData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string id = gvData.Rows[e.RowIndex].Cells["id"].FormattedValue.ToString();
+                string tipo = gvData.Rows[e.RowIndex].Cells["tipo"].FormattedValue.ToString();
+
+                if(tipo != "<===")
+                {
+                    EntradaAlta frm = new EntradaAlta();
+                    var _frm = Application.OpenForms["EntradaAlta"] as EntradaAlta;
+                    var menu = Application.OpenForms["menu"] as Menu;
+                    frm._idEntrada = int.Parse(id);
+                    ofunciones.cargarForm(frm, null, menu);
+                }
+                else
+                {
+                    SalidaAlta frm = new SalidaAlta();
+                    var _frm = Application.OpenForms["SalidaAlta"] as SalidaAlta;
+                    var menu = Application.OpenForms["menu"] as Menu;
+                    frm._idSalida = int.Parse(id);
+                    ofunciones.cargarForm(frm, null, menu);
+                }
             }
             catch (Exception ex)
             {

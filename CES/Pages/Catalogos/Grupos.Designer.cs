@@ -39,7 +39,6 @@
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.grupospBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.catalogos = new CES.DB.DataSets.Catalogos();
-            this.database1DataSet = new CES.Database1DataSet();
             this.database1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnNuevo = new MetroFramework.Controls.MetroButton();
             this.btnActualizar = new MetroFramework.Controls.MetroButton();
@@ -48,7 +47,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupospBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.catalogos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,17 +149,7 @@
             // 
             this.catalogos.DataSetName = "Catalogos";
             this.catalogos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // database1DataSetBindingSource
-            // 
-            this.database1DataSetBindingSource.DataSource = this.database1DataSet;
-            this.database1DataSetBindingSource.Position = 0;
-            // 
+            //  
             // btnNuevo
             // 
             this.btnNuevo.Location = new System.Drawing.Point(112, 31);
@@ -213,7 +201,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupospBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.catalogos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -224,7 +211,6 @@
         private MetroFramework.Controls.MetroGrid gvData;
         private System.Windows.Forms.BindingSource grupospBindingSource;
         private DB.DataSets.Catalogos catalogos;
-        private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource database1DataSetBindingSource;
         private DB.DataSets.CatalogosTableAdapters.Grupo_spTableAdapter grupo_spTableAdapter;
         private MetroFramework.Controls.MetroButton btnNuevo;

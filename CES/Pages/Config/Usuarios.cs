@@ -123,6 +123,9 @@ namespace CES.Pages.Config
         {
             try
             {
+                 if (e.RowIndex == -1 || e.ColumnIndex == -1)
+                    return;
+
                 string idUsuario = gvData.Rows[e.RowIndex].Cells["idUsuario"].FormattedValue.ToString();
 
                 if (gvData.Columns[e.ColumnIndex].Name == "Delete")

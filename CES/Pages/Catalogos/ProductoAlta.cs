@@ -16,7 +16,7 @@ namespace CES.Pages.Catalogos
     public partial class ProductoAlta : MetroFramework.Forms.MetroForm
     {
         public int _idProducto;
-        public string _code;
+        public string _code = "";
 
         public ProductoAlta()
         {
@@ -173,6 +173,7 @@ namespace CES.Pages.Catalogos
                     string msn = "Registro " + (txtIdProducto.Text != "0" ? "Actualizado" : "Agregado") + " Correctamenete";
 
                     MessageBox.Show(msn);
+
                     if (!(_code.Length > 1))
                     {
                         var _frm = Application.OpenForms["Productos"] as Catalogos.Productos;
@@ -189,6 +190,7 @@ namespace CES.Pages.Catalogos
 
                         }
                     }
+
                     this.Hide();
                 }
                 else

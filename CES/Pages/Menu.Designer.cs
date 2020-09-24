@@ -55,10 +55,10 @@
             this.menucConfigUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.menucConfigN = new System.Windows.Forms.ToolStripMenuItem();
             this.menucConfigUsuarioL = new System.Windows.Forms.ToolStripMenuItem();
+            this.configLicencia = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.perfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarCeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configLicencia = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,14 +98,14 @@
             // menuControlEntradaN
             // 
             this.menuControlEntradaN.Name = "menuControlEntradaN";
-            this.menuControlEntradaN.Size = new System.Drawing.Size(152, 22);
+            this.menuControlEntradaN.Size = new System.Drawing.Size(108, 22);
             this.menuControlEntradaN.Text = "Nueva";
             this.menuControlEntradaN.Click += new System.EventHandler(this.nuevaToolStripMenuItem_Click);
             // 
             // menuControlEntradaL
             // 
             this.menuControlEntradaL.Name = "menuControlEntradaL";
-            this.menuControlEntradaL.Size = new System.Drawing.Size(152, 22);
+            this.menuControlEntradaL.Size = new System.Drawing.Size(108, 22);
             this.menuControlEntradaL.Text = "Lista";
             this.menuControlEntradaL.Click += new System.EventHandler(this.listaToolStripMenuItem5_Click);
             // 
@@ -121,14 +121,16 @@
             // menuControlSalidaN
             // 
             this.menuControlSalidaN.Name = "menuControlSalidaN";
-            this.menuControlSalidaN.Size = new System.Drawing.Size(152, 22);
+            this.menuControlSalidaN.Size = new System.Drawing.Size(108, 22);
             this.menuControlSalidaN.Text = "Nueva";
+            this.menuControlSalidaN.Click += new System.EventHandler(this.menuControlSalidaN_Click);
             // 
             // menuControlSalidaL
             // 
             this.menuControlSalidaL.Name = "menuControlSalidaL";
-            this.menuControlSalidaL.Size = new System.Drawing.Size(152, 22);
+            this.menuControlSalidaL.Size = new System.Drawing.Size(108, 22);
             this.menuControlSalidaL.Text = "Lista";
+            this.menuControlSalidaL.Click += new System.EventHandler(this.menuControlSalidaL_Click);
             // 
             // menuControlInventario
             // 
@@ -161,20 +163,20 @@
             this.menuCatalogosProductosN,
             this.menuCatalogosProductosL});
             this.menuCatalogosProductos.Name = "menuCatalogosProductos";
-            this.menuCatalogosProductos.Size = new System.Drawing.Size(152, 22);
+            this.menuCatalogosProductos.Size = new System.Drawing.Size(139, 22);
             this.menuCatalogosProductos.Text = "Productos";
             // 
             // menuCatalogosProductosN
             // 
             this.menuCatalogosProductosN.Name = "menuCatalogosProductosN";
-            this.menuCatalogosProductosN.Size = new System.Drawing.Size(152, 22);
+            this.menuCatalogosProductosN.Size = new System.Drawing.Size(109, 22);
             this.menuCatalogosProductosN.Text = "Nuevo";
             this.menuCatalogosProductosN.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // menuCatalogosProductosL
             // 
             this.menuCatalogosProductosL.Name = "menuCatalogosProductosL";
-            this.menuCatalogosProductosL.Size = new System.Drawing.Size(152, 22);
+            this.menuCatalogosProductosL.Size = new System.Drawing.Size(109, 22);
             this.menuCatalogosProductosL.Text = "Lista";
             this.menuCatalogosProductosL.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
             // 
@@ -184,20 +186,20 @@
             this.menuCatalogosGruposN,
             this.menuCatalogosGruposL});
             this.menuCatalogosGrupos.Name = "menuCatalogosGrupos";
-            this.menuCatalogosGrupos.Size = new System.Drawing.Size(152, 22);
+            this.menuCatalogosGrupos.Size = new System.Drawing.Size(139, 22);
             this.menuCatalogosGrupos.Text = "Grupos";
             // 
             // menuCatalogosGruposN
             // 
             this.menuCatalogosGruposN.Name = "menuCatalogosGruposN";
-            this.menuCatalogosGruposN.Size = new System.Drawing.Size(152, 22);
+            this.menuCatalogosGruposN.Size = new System.Drawing.Size(109, 22);
             this.menuCatalogosGruposN.Text = "Nuevo";
             this.menuCatalogosGruposN.Click += new System.EventHandler(this.nuevoToolStripMenuItem1_Click);
             // 
             // menuCatalogosGruposL
             // 
             this.menuCatalogosGruposL.Name = "menuCatalogosGruposL";
-            this.menuCatalogosGruposL.Size = new System.Drawing.Size(152, 22);
+            this.menuCatalogosGruposL.Size = new System.Drawing.Size(109, 22);
             this.menuCatalogosGruposL.Text = "Lista";
             this.menuCatalogosGruposL.Click += new System.EventHandler(this.listaToolStripMenuItem1_Click);
             // 
@@ -207,20 +209,20 @@
             this.menuCatalogosUmN,
             this.menuCatalogosUmL});
             this.menuCatalogosUm.Name = "menuCatalogosUm";
-            this.menuCatalogosUm.Size = new System.Drawing.Size(152, 22);
+            this.menuCatalogosUm.Size = new System.Drawing.Size(139, 22);
             this.menuCatalogosUm.Text = "UM";
             // 
             // menuCatalogosUmN
             // 
             this.menuCatalogosUmN.Name = "menuCatalogosUmN";
-            this.menuCatalogosUmN.Size = new System.Drawing.Size(152, 22);
+            this.menuCatalogosUmN.Size = new System.Drawing.Size(109, 22);
             this.menuCatalogosUmN.Text = "Nuevo";
             this.menuCatalogosUmN.Click += new System.EventHandler(this.nuevoToolStripMenuItem2_Click);
             // 
             // menuCatalogosUmL
             // 
             this.menuCatalogosUmL.Name = "menuCatalogosUmL";
-            this.menuCatalogosUmL.Size = new System.Drawing.Size(152, 22);
+            this.menuCatalogosUmL.Size = new System.Drawing.Size(109, 22);
             this.menuCatalogosUmL.Text = "Lista";
             this.menuCatalogosUmL.Click += new System.EventHandler(this.listaToolStripMenuItem2_Click);
             // 
@@ -230,20 +232,20 @@
             this.menuCatalogosProveedoresN,
             this.menuCatalogosProveedoresL});
             this.menuCatalogosProveedores.Name = "menuCatalogosProveedores";
-            this.menuCatalogosProveedores.Size = new System.Drawing.Size(152, 22);
+            this.menuCatalogosProveedores.Size = new System.Drawing.Size(139, 22);
             this.menuCatalogosProveedores.Text = "Proveedores";
             // 
             // menuCatalogosProveedoresN
             // 
             this.menuCatalogosProveedoresN.Name = "menuCatalogosProveedoresN";
-            this.menuCatalogosProveedoresN.Size = new System.Drawing.Size(152, 22);
+            this.menuCatalogosProveedoresN.Size = new System.Drawing.Size(109, 22);
             this.menuCatalogosProveedoresN.Text = "Nuevo";
             this.menuCatalogosProveedoresN.Click += new System.EventHandler(this.nuevoToolStripMenuItem3_Click);
             // 
             // menuCatalogosProveedoresL
             // 
             this.menuCatalogosProveedoresL.Name = "menuCatalogosProveedoresL";
-            this.menuCatalogosProveedoresL.Size = new System.Drawing.Size(152, 22);
+            this.menuCatalogosProveedoresL.Size = new System.Drawing.Size(109, 22);
             this.menuCatalogosProveedoresL.Text = "Lista";
             this.menuCatalogosProveedoresL.Click += new System.EventHandler(this.listaToolStripMenuItem3_Click);
             // 
@@ -262,22 +264,29 @@
             this.menucConfigN,
             this.menucConfigUsuarioL});
             this.menucConfigUsuarios.Name = "menucConfigUsuarios";
-            this.menucConfigUsuarios.Size = new System.Drawing.Size(152, 22);
+            this.menucConfigUsuarios.Size = new System.Drawing.Size(119, 22);
             this.menucConfigUsuarios.Text = "Usuarios";
             // 
             // menucConfigN
             // 
             this.menucConfigN.Name = "menucConfigN";
-            this.menucConfigN.Size = new System.Drawing.Size(152, 22);
+            this.menucConfigN.Size = new System.Drawing.Size(109, 22);
             this.menucConfigN.Text = "Nuevo";
             this.menucConfigN.Click += new System.EventHandler(this.nuevoToolStripMenuItem4_Click);
             // 
             // menucConfigUsuarioL
             // 
             this.menucConfigUsuarioL.Name = "menucConfigUsuarioL";
-            this.menucConfigUsuarioL.Size = new System.Drawing.Size(152, 22);
+            this.menucConfigUsuarioL.Size = new System.Drawing.Size(109, 22);
             this.menucConfigUsuarioL.Text = "Lista";
             this.menucConfigUsuarioL.Click += new System.EventHandler(this.listaToolStripMenuItem4_Click);
+            // 
+            // configLicencia
+            // 
+            this.configLicencia.Name = "configLicencia";
+            this.configLicencia.Size = new System.Drawing.Size(119, 22);
+            this.configLicencia.Text = "Licencia";
+            this.configLicencia.Click += new System.EventHandler(this.activarToolStripMenuItem_Click);
             // 
             // usuarioToolStripMenuItem
             // 
@@ -293,22 +302,15 @@
             // perfilToolStripMenuItem
             // 
             this.perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
-            this.perfilToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.perfilToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.perfilToolStripMenuItem.Text = "Perfil";
             // 
             // cerrarCeToolStripMenuItem
             // 
             this.cerrarCeToolStripMenuItem.Name = "cerrarCeToolStripMenuItem";
-            this.cerrarCeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cerrarCeToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.cerrarCeToolStripMenuItem.Text = "Cerrar sesion";
             this.cerrarCeToolStripMenuItem.Click += new System.EventHandler(this.cerrarCeToolStripMenuItem_Click);
-            // 
-            // configLicencia
-            // 
-            this.configLicencia.Name = "configLicencia";
-            this.configLicencia.Size = new System.Drawing.Size(152, 22);
-            this.configLicencia.Text = "Licencia";
-            this.configLicencia.Click += new System.EventHandler(this.activarToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -321,6 +323,7 @@
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Style = MetroFramework.MetroColorStyle.White;
             this.Text = "Control de Inventario";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
